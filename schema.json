@@ -1,0 +1,45 @@
+{
+  "type": "component",
+  "metadata": {},
+  "schema": {
+    "name": "Spotify-Embed",
+    "friendlyName": "Spotify-Embed",
+    "description": "Spotify Embed plugin provides an embeddable view of a track, artist, album, user, playlist, podcast, or episode for use within your web project.",
+    "showSettingsBar": true,
+    "icon": "Artboard",
+    "settings": [
+      {
+        "type": "url",
+        "label": "Spotify Link",
+        "key": "link",
+        "required": true
+      },
+      {
+        "type": "select",
+        "label": "Size",
+        "key": "size",
+        "defaultValue": true,
+        "showInBar": true,
+        "barStyle": "picker",
+        "required": true,
+        "options": [
+          {
+            "label": "Normal",
+            "value": true
+          },
+          {
+            "label": "Compact",
+            "value": false
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "label": "Width",
+        "key": "width",
+        "defaultValue": "100%",
+        "required": true
+      }
+    ]
+  }
+}
