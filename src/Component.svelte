@@ -8,34 +8,36 @@
   export let width;
 
   let getHeight = (size) => {
-      switch (true) {
+    switch (true) {
       case link.includes("album"):
-          return size ? 360 : 80;
+        return size ? 360 : 80;
       case link.includes("playlist"):
       case link.includes("artist"):
-          return size ? 380 : 80;
+        return size ? 380 : 80;
       case link.includes("track"):
       case link.includes("show"):
       case link.includes("episode"):
-          return size ? 352 : 152;
-  }
-  }
+        return size ? 352 : 152;
+    }
+  };
 
   $: height = getHeight(size);
 
   $: src = link.replace(".com/", ".com/embed/");
 </script>
 
-<div use:styleable={$component.styles}>
-  <iframe
-      style="border-radius: 12px;"
-      {height}
-      {width}
-      title="Spotify Embed"
-      frameborder="0"
-      allowfullscreen
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      loading="lazy"
-      {src}
-  />
-</div>
+<iframe
+  use:styleable={$component.styles}
+  style="border-radius: 12px;"
+  {height}
+  {width}
+  title="Spotify Embed"
+  frameborder="0"
+  allowfullscreen
+  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+  loading="lazy"
+  {src}
+/>
+
+<style>
+</style>
